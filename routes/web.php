@@ -13,6 +13,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    $nav =[
+            [
+                'name' => 'Home',
+                'href' => '#'
+            ],
+            [
+                'name' => 'About me',
+                'href' => 'about-me'
+            ],
+            [
+                'name' => 'Contact',
+                'href' => '#'
+            ]
+        ];
+
+        
+    return view('home', compact('nav'));
+
 });
+
+Route::get('/about-me', function () {
+    $nav =[
+        [
+            'name' => 'Home',
+            'href' => 'home'
+        ],
+        [
+            'name' => 'About me',
+            'href' => 'about-me'
+        ],
+        [
+            'name' => 'Contact',
+            'href' => '#'
+        ]
+        ];
+    return view('about-me',  compact('nav'));
+    
+}) -> name('about-me');
