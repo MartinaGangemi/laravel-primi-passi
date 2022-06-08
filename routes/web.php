@@ -13,19 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     $nav =[
             [
                 'name' => 'Home',
-                'href' => '#'
+                'href' => '.'
             ],
             [
                 'name' => 'About me',
                 'href' => 'about-me'
-            ],
-            [
-                'name' => 'Contact',
-                'href' => '#'
             ]
         ];
 
@@ -38,17 +34,15 @@ Route::get('/about-me', function () {
     $nav =[
         [
             'name' => 'Home',
-            'href' => 'home'
+            'href' => '.'
         ],
         [
             'name' => 'About me',
             'href' => 'about-me'
-        ],
-        [
-            'name' => 'Contact',
-            'href' => '#'
         ]
-        ];
+       
+    ];
+
     return view('about-me',  compact('nav'));
     
 }) -> name('about-me');
